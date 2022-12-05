@@ -6,16 +6,16 @@ long_description = open('README.md').read()
 with open('requirements.txt') as f:
     requirements = f.read().splitlines()
 
-version = '0.1.1'
+version = '0.2.0'
 
 setup(
-    name='ontotree',
+    name='ontoutils',
     version=version,
     install_requires=requirements,
     packages=find_packages(),
     include_package_data=True,
-    url='https://github.com/ccb-hms/ontotree',
-    description='Utility to write an ontology class hierarchy as a Newick tree',
+    url='https://github.com/ccb-hms/ontoutils',
+    description='Utilities to write an ontology class hierarchy as a Newick tree or as a table.',
     long_description=long_description,
     long_description_content_type='text/markdown',
     author='Rafael Goncalves, Center for Computational Biomedicine, Harvard Medical School',

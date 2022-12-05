@@ -1,6 +1,6 @@
-# ontotree
+# ontoutils
 
-Utility to write an ontology class hierarchy as a Newick tree.
+Utilities to write an ontology class hierarchy as a Newick tree or as a table.
 
 ## Usage
 
@@ -11,7 +11,7 @@ Clone this repository and then install package using **pip**: ```pip install .``
 Import package:
 
 ```Python
-from ontotree.onto2tree import Onto2Tree
+from ontoutils.onto2tree import Onto2Tree
 ```
 
 Generate a Newick tree representing the class hierarchy of the given ontology and get back an [ETE **Tree** object](https://github.com/etetoolkit/ete):
@@ -27,11 +27,21 @@ tree = Onto2Tree().generate_ontology_tree(ontology_file="http://purl.obolibrary.
                                           output_file="cl.txt")
 ```
 
+Generate a table representing the inferred class hierarchy of the given ontology and get back a data frame:
+
+```Python
+from ontoutils.onto2table import Onto2Table
+
+df = Onto2Table.generate_ontology_table(ontology_file="http://purl.obolibrary.org/obo/cl/releases/2022-09-15/cl.owl",
+                                        output_file="cl.csv",
+                                        use_reasoning=True)
+```
+
 ### Command-line usage
 
-`python ontotree -ont ONTOLOGY -out OUTPUT [-R REASONING]` 
+`python ontoutils -ont ONTOLOGY -out OUTPUT [-R REASONING]` 
 
-To display a help message do: ```python ontotree -h```
+To display a help message do: ```python ontoutils -h```
 
 ### Required arguments
 
