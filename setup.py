@@ -6,7 +6,7 @@ long_description = open('README.md').read()
 with open('requirements.txt') as f:
     requirements = f.read().splitlines()
 
-version = '0.1.0'
+version = '0.1.1'
 
 setup(
     name='ontotree',
