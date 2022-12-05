@@ -1,5 +1,5 @@
 import argparse
-from ontotree import OntoTree
+from onto2tree import Onto2Tree
 
 
 def get_arguments():
@@ -14,5 +14,5 @@ def get_arguments():
 
 if __name__ == "__main__":
     ontology, output_file, use_reasoning = get_arguments()
-    OntoTree().convert_ontology(ontology, output_file, use_reasoning=use_reasoning)
+    Onto2Tree().generate_ontology_tree(ontology_file=ontology, output_file=output_file, use_reasoning=use_reasoning)
     # TODO consider making the edge/relationship type parameterizable (to go beyond IS-A (SubClass) relationships)
