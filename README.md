@@ -20,11 +20,12 @@ Generate a Newick tree representing the class hierarchy of the given ontology an
 tree = Onto2Tree().generate_ontology_tree(ontology_file="http://purl.obolibrary.org/obo/cl/releases/2022-09-15/cl.owl")
 ```
 
-Generate a tree, get the `Tree` object and save to the specified file:
+Generate a `Tree` object representing the ontology's inferred class hierarchy and save to the specified file:
 
 ```Python
 tree = Onto2Tree().generate_ontology_tree(ontology_file="http://purl.obolibrary.org/obo/cl/releases/2022-09-15/cl.owl",
-                                          output_file="cl.txt")
+                                          output_file="cl.txt",
+                                          use_reasoning=True)
 ```
 
 Generate a table representing the inferred class hierarchy of the given ontology and get back a data frame:
