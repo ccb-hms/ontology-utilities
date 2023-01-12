@@ -6,7 +6,7 @@ long_description = open('README.md').read()
 with open('requirements.txt') as f:
     requirements = f.read().splitlines()
 
-version = '0.2.0'
+version = '0.2.1'
 
 setup(
     name='ontoutils',
@@ -14,7 +14,7 @@ setup(
     install_requires=requirements,
     packages=find_packages(),
     include_package_data=True,
-    url='https://github.com/ccb-hms/ontoutils',
+    url='https://github.com/ccb-hms/ontology-utilities',
     description='Utilities to write an ontology class hierarchy as a Newick tree or as a table.',
     long_description=long_description,
     long_description_content_type='text/markdown',
@@ -27,6 +27,5 @@ setup(
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',
         'Topic :: Scientific/Engineering',
-        'Topic :: Scientific/Engineering :: Bio-Informatics'
     ]
 )
