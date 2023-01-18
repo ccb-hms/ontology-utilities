@@ -33,9 +33,9 @@ Generate a table representing the inferred class hierarchy of the given ontology
 ```Python
 from ontoutils.onto2table import Onto2Table
 
-df = Onto2Table.generate_ontology_table(ontology_file="http://purl.obolibrary.org/obo/cl/releases/2022-09-15/cl.owl",
-                                        output_file="cl.csv",
-                                        use_reasoning=True)
+df = Onto2Table.generate_table_from_file(ontology_file="http://purl.obolibrary.org/obo/cl/releases/2022-09-15/cl.owl",
+                                         output_file="cl.csv",
+                                         use_reasoning=True)
 ```
 
 ### Command-line usage

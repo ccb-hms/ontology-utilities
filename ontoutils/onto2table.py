@@ -6,14 +6,18 @@ class Onto2Table:
     """Writes an ontology class hierarchy as a table"""
 
     @staticmethod
-    def generate_ontology_table(ontology_file, output_file="", use_reasoning=False):
+    def generate_table_from_file(ontology_file, output_file="", use_reasoning=False):
         collector = OntologyTermCollector()
         terms = collector.get_ontology_terms(ontology_iri=ontology_file,
                                              use_reasoning=use_reasoning,
                                              exclude_deprecated=True)
+        return Onto2Table.generate_table_from_terms(terms, output_file=output_file)
+
+    @staticmethod
+    def generate_table_from_terms(ontology_terms, output_file=""):
         output = set()
-        for term in terms:
-            term_details = terms[term]
+        for term in ontology_terms:
+            term_details = ontology_terms[term]
             parents = term_details.parents
             if len(parents) > 0:
                 for parent in parents:

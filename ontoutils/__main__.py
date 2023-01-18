@@ -4,7 +4,8 @@ from onto2table import Onto2Table
 
 
 def get_arguments():
-    parser = argparse.ArgumentParser(description="Utilities to write an ontology class hierarchy as a Newick tree or as a table")
+    parser = argparse.ArgumentParser(
+        description="Utilities to write an ontology class hierarchy as a Newick tree or as a table")
     parser.add_argument("-ont", "--ontology", required=True, type=str, help="Input ontology file path or URL")
     parser.add_argument("-out", "--output", required=True, type=str, help="Output file path")
     parser.add_argument("-r", "--reasoning", required=False, default=False, action="store_true",
@@ -15,6 +16,7 @@ def get_arguments():
     return arguments.ontology, arguments.output, arguments.reasoning, arguments.format
 
 
+# TODO consider making the edge/relationship type parameterizable (to go beyond IS-A (SubClass) relationships)
 if __name__ == "__main__":
     ontology, output_file, use_reasoning, output_format = get_arguments()
     if output_format == "tree":
@@ -22,8 +24,8 @@ if __name__ == "__main__":
                                            output_file=output_file,
                                            use_reasoning=use_reasoning)
     elif output_format == "table":
-        Onto2Table.generate_ontology_table(ontology_file=ontology,
-                                           output_file=output_file,
-                                           use_reasoning=use_reasoning)
+        Onto2Table.generate_table_from_file(ontology_file=ontology,
+                                            output_file=output_file,
+                                            use_reasoning=use_reasoning)
     else:
         raise RuntimeError("Unsupported output format: " + output_format)
