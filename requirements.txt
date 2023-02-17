@@ -1,6 +1,6 @@
 ete3==3.1.2
-Owlready2==0.36
+Owlready2~=0.40
 argparse~=1.4.0
-pandas~=1.4.1
-text2term~=1.2.1
-setuptools~=66.0.0
+pandas~=1.5.3
+text2term~=2.0.0
+setuptools~=67.3.2
